@@ -1,10 +1,11 @@
 class VehiclesController < ApplicationController
+  before_action :set_vehicle, only: %i[ edit update show destroy]
+
   def index
     @vehicles = Vehicles.all
   end
 
   def show
-    @vehicle = Vehicle.find(params[:id])
     @booking = Booking.where(vehicle_id: @vehicle.id)
   end
 
@@ -22,11 +23,24 @@ class VehiclesController < ApplicationController
   end
 
   def edit
-    @vehicle
+  end
+
+  def update
+    @vehicle.update(vehicle_params)
   end
 
   def destroy
     @vehicle.destroy
     redirect_to list_path(@vehicle.booking)
+  end
+
+  private
+
+  def vehicle_params
+    params.require(:vehicle).permit(:license, :category, :color, :model)
+  end
+
+  def set_vehicle
+    @vehicle = Vehicle.find(params[:id])
   end
 end
