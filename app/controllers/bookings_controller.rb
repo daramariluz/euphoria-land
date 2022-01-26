@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :booking_params
-  
+
   def new
     @vehicle = Vehicle.find(params[:vehicle_id])
     @booking = Booking.new
@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
 
   private
 
