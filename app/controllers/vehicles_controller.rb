@@ -2,7 +2,7 @@ class VehiclesController < ApplicationController
   before_action :set_vehicle, only: %i[ edit update show destroy]
 
   def index
-    @vehicles = Vehicles.all
+    @vehicles = Vehicle.all
   end
 
   def show
