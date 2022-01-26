@@ -7,3 +7,4 @@ class Vehicle < ApplicationRecord
  validates :category, inclusion: { in: %w(scooter auto bicicleta),
     message: "%{value} is not a valid vehicle" }
 end
+#estamos en prueba heroku
