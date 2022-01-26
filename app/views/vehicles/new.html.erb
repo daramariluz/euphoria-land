@@ -1,0 +1,14 @@
+<div class="container">
+<div class="row">
+<div class="col"><br><br><br><br><br></div></div>
+</div>
+<div class="container">
+  <%= simple_form_for(@vehicle) do |f| %>
+    <%= f.input :license %>
+    <%= f.input :category, collection: ["Auto", "Bicicleta", "Scooter"] %>
+    <%= f.input :color %>
+    <%= f.input :model %>
+    <%= f.input :description %>
+    <%= f.submit "Guardar", class: "btn btn-success" %>
+  <% end %>
+</div>

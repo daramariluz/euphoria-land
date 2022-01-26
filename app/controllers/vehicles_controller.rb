@@ -16,7 +16,7 @@ class VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(vehicle_params)
     if @vehicle.save
-      redirect_to list_path(@vehicle)
+      redirect_to root_path
     else
       render :new
     end
@@ -37,7 +37,7 @@ class VehiclesController < ApplicationController
   private
 
   def vehicle_params
-    params.require(:vehicle).permit(:license, :category, :color, :model)
+    params.require(:vehicle).permit(:license, :category, :color, :model, :description)
   end
 
   def set_vehicle
