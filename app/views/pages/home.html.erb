@@ -4,11 +4,12 @@
 </div>
 
 <div class="container">
-  <h2>Autos</h2>
+        <h2>Vehiculos disponibles</h2>
   <div class="row mt-2 mb-2">
 
-    <% @vehicles_autos.take(3).each do |auto| %>
+    <% @vehicles_autos.take(1).each do |auto| %>
       <div class="col-4">
+        <h2>Autos</h2>
         <div class="card" style="width: 18rem;">
           <img src="<%= auto.photo_url %>" class="card-img-top" alt="...">
           <div class="card-body">
@@ -21,13 +22,12 @@
         </div>
       </div>
     <% end %>
-  </div>
 
-  <h2>Bicicletas</h2>
-  <div class="row">
 
-    <% @vehicles_bicicletas.take(3).each do |bicicleta| %>
+
+    <% @vehicles_bicicletas.take(1).each do |bicicleta| %>
       <div class="col-4">
+        <h2>Bicicletas</h2>
         <div class="card" style="width: 18rem;">
           <img src="<%= bicicleta.photo_url %>" class="card-img-top" alt="...">
           <div class="card-body">
@@ -40,12 +40,11 @@
         </div>
       </div>
     <% end %>
-  </div>
 
-  <h2>Scooters</h2>
-  <div class="row">
-    <% @vehicles_scooters.take(3).each do |scooter| %>
+
+    <% @vehicles_scooters.take(1).each do |scooter| %>
       <div class="col-4">
+        <h2>Scooters</h2>
         <div class="card" style="width: 18rem;">
           <img src="<%= scooter.photo_url %>" class="card-img-top" alt="...">
           <div class="card-body">
@@ -59,5 +58,4 @@
       </div>
     <% end %>
   </div>
-
 </div>
