@@ -4,82 +4,60 @@
 </div>
 
 <div class="container">
+  <h2>Autos</h2>
   <div class="row mt-2 mb-2">
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Auto Deportivo</h5>
-          <p class="card-text">
-          Desde su lanzamiento, la Mazda CX-5 se convirtió rápidamente en un éxito en ventas para la marca japonesa.
-          </p>
-          <a href="#" class="btn btn-success rounded-pill">Ver más detalles</a>
+
+    <% @vehicles_autos.take(3).each do |auto| %>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="<%= auto.photo_url %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= auto.model %></h5>
+            <p class="card-text">
+              <%= auto.description %>
+            </p>
+            <%= link_to "Detalles", vehicle_path(auto) %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Volkswagen clásico</h5>
-          <p class="card-text">
-          Desde su lanzamiento, la Mazda CX-5 se convirtió rápidamente en un éxito en ventas para la marca japonesa.
-          ventas para la marca japonesa.
-          </p>
-          <a href="#" class="btn btn-primary">Ver más detalles</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Auto furioso</h5>
-          <p class="card-text">
-          Desde su lanzamiento, la Mazda CX-5 se convirtió rápidamente en un éxito en ventas para la marca japonesa.
-          </p>
-          <a href="#" class="btn btn-primary">Ver más detalles</a>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
+
+  <h2>Bicicletas</h2>
   <div class="row">
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://media.istockphoto.com/photos/businessman-riding-a-motor-scooter-in-sofia-picture-id1175266637?b=1&k=20&m=1175266637&s=170667a&w=0&h=_6VzkWKViQd66gHysqvtk01Mk40GBevzRrVRQJeyxLQ=" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Scooter eléctrico</h5>
-          <p class="card-text">
-          Desde su lanzamiento, la Mazda CX-5 se convirtió rápidamente en un éxito en ventas para la marca japonesa.
-          </p>
-          <a href="#" class="btn btn-primary">Ver más detalles</a>
+
+    <% @vehicles_bicicletas.take(3).each do |bicicleta| %>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="<%= bicicleta.photo_url %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= bicicleta.model %></h5>
+            <p class="card-text">
+              <%= bicicleta.description %>
+            </p>
+            <%= link_to "Detalles", vehicle_path(bicicleta) %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2FyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Auto de aventura</h5>
-          <p class="card-text">
-          Desde su lanzamiento, la Mazda CX-5 se convirtió rápidamente en un éxito en ventas para la marca japonesa.
-          </p>
-          <a href="#" class="btn btn-primary">Ver más detalles</a>
+    <% end %>
+  </div>
+
+  <h2>Scooters</h2>
+  <div class="row">
+    <% @vehicles_scooters.take(3).each do |scooter| %>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="<%= scooter.photo_url %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= scooter.model %></h5>
+            <p class="card-text">
+              <%= scooter.description %>
+            </p>
+            <%= link_to "Detalles", vehicle_path(scooter) %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://images.unsplash.com/photo-1454017428489-c6a010658206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Bicicleta vintage</h5>
-          <p class="card-text">
-          Desde su lanzamiento, la Mazda CX-5 se convirtió rápidamente en un éxito en ventas para la marca japonesa.
-          </p>
-          <a href="#" class="btn btn-primary">Ver más detalles</a>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
 
 </div>
