@@ -6,7 +6,7 @@ class VehiclesController < ApplicationController
   end
 
   def show
-    @booking = Booking.where(vehicle_id: @vehicle.id)
+
   end
 
   def new
