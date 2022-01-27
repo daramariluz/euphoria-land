@@ -1,0 +1,17 @@
+<div class="bookings container mt-large">
+<div class="card-columns">
+  <% @vehicles.each do |vehicle| %>
+        <div class="card" style="width: 18rem;">
+          <img src="<%= vehicle.photo_url %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= vehicle.model %></h5>
+            <p class="card-text">
+              <%= vehicle.description %>
+            </p>
+            <%= link_to "Detalles", vehicle_path(vehicle) %>
+          </div>
+        </div>
+  <% end %>
+</div>
+
+</div>

@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
 Vehicle.destroy_all
 
 # Autos
@@ -29,3 +30,7 @@ Vehicle.create! license: "AXD341", description: "lorem  lorem lorem", category: 
 Vehicle.create! license: "AXD342", description: "lorem  lorem lorem", category: "Scooter", color: "Azul", model: "Clasico", photo_url: "https://media.istockphoto.com/photos/girl-is-taking-her-black-and-red-electric-scooter-denim-style-flowers-picture-id1167446806?b=1&k=20&m=1167446806&s=170667a&w=0&h=vdqCNC1taOsCDHBCsBIhKbX_Z1GQiV3o6AHDSdUnjyU="
 Vehicle.create! license: "AXD343", description: "lorem  lorem lorem", category: "Scooter", color: "Azul", model: "Clasico", photo_url: "https://media.istockphoto.com/photos/girl-is-taking-her-black-and-red-electric-scooter-denim-style-flowers-picture-id1167446806?b=1&k=20&m=1167446806&s=170667a&w=0&h=vdqCNC1taOsCDHBCsBIhKbX_Z1GQiV3o6AHDSdUnjyU="
 Vehicle.create! license: "AXD344", description: "lorem  lorem lorem", category: "Scooter", color: "Azul", model: "Clasico", photo_url: "https://media.istockphoto.com/photos/girl-is-taking-her-black-and-red-electric-scooter-denim-style-flowers-picture-id1167446806?b=1&k=20&m=1167446806&s=170667a&w=0&h=vdqCNC1taOsCDHBCsBIhKbX_Z1GQiV3o6AHDSdUnjyU="
+
+# Bookings
+# heroku run rails c
+# Booking.create! user: User.first, vehicle: Vehicle.first, location: "Arequipa", date: "22/01/2022"

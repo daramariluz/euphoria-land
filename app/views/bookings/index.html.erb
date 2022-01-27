@@ -1,0 +1,13 @@
+<div class="bookings container mt-large">
+<% @bookings.each do |booking| %>
+<div class="card text-center mb-2">
+
+  <div class="card-body">
+    <h5 class="card-title">Categoria: <%= booking.vehicle.category %></h5>
+    <h5 class="card-title"> Modelo: <%= booking.vehicle.model %></h5>
+    <p class="card-text"><%= booking.vehicle.description %></p>
+    <span class="badge bg-info text-dark"><%= booking.location %> - <%= booking.date %></span>
+  </div>
+</div>
+<% end %>
+</div>

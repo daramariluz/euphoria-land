@@ -1,5 +1,11 @@
 class BookingsController < ApplicationController
-  before_action :booking_params
+  before_action :booking_params, except: [:index]
+
+  def index
+    # user = User.find params[:user_id]
+    # @bookings = user.bookings
+    @bookings  = current_user.bookings
+  end
 
   def new
     @vehicle = Vehicle.find(params[:vehicle_id])
